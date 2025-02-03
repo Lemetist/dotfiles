@@ -1,8 +1,7 @@
-from pyinfra.operations import files, git, server,dnf
+from pyinfra.operations import files, server, dnf
 
-from common import (cwd_path, home_path_str,
-                    personal_projects_path_str, projects_path_str,
-                    work_projects_path_str, zshrc_path_str)
+from common import (personal_projects_path_str, projects_path_str,
+                    work_projects_path_str)
 
 
 def setup_linux_using_dnf():
@@ -15,6 +14,7 @@ def setup_linux_using_dnf():
            "docker",
             "go",
             "nmap",
+            "postgresql-server"
 
         ],
         _sudo=True
@@ -24,7 +24,7 @@ def setup_linux_using_dnf():
 
 def setup_basic_directories():
     """
-    Here I craate basic directories I use every day.
+    Here I create basic directories I use every day.
     """
     for path in [
         projects_path_str,
