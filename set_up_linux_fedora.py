@@ -14,6 +14,13 @@ def setup_linux_using_dnf() :
             "go",
             "nmap",
             "postgresql-server",
+            "mysql-server",
+            "nmap",
+            "bat",
+            "qbittorrent",
+            "htop"
+
+
         ],
         _sudo=True
     )
@@ -40,7 +47,7 @@ def setup_basic_directories() :
         )
 
 
-def setup_snap_packages() :
+def setup_snap_and_flatpak_packages() :
     """
     Install must-have packages using Snap.
     """
@@ -48,6 +55,17 @@ def setup_snap_packages() :
         "sudo snap install --classic code",
         "sudo snap install --classic telegram-desktop"
         "flatpak install flathub dev.vencord.Vesktop"
+        "sudo snap install obsidian --classic"
+        "flatpak install flathub ru.yandex.Browser"
+    ])
+
+def setup_zed() :
+    """
+    Install Zed
+    """
+
+    server.shell(commands=[
+        "sudo curl -f https://zed.dev/install.sh | sh"
     ])
 
 def setup_ohmyzsh() :
@@ -60,5 +78,6 @@ def setup_ohmyzsh() :
 
 
 setup_linux_using_dnf()
+setup_zed()
 setup_basic_directories()
 setup_ohmyzsh()
