@@ -35,8 +35,8 @@ def setup_basic_directories() :
     ] :
         files.directory(
             path=path,
-            present=True,
-            _sudo=True
+            present=False,
+            _sudo=False
         )
 
 
