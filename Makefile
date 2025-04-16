@@ -15,4 +15,4 @@ install-dev-requirements: .venv
 # installs dependencies using pyinfra
 .PHONY: install
 install: install-requirements
-	.venv/bin/pyinfra inventory.py set_up_mac.py -v
+	.venv/bin/pyinfra inventory.py set_up_linux_fedora.py -v

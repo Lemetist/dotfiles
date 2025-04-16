@@ -18,11 +18,12 @@ def setup_linux_using_dnf() :
             "nmap",
             "bat",
             "qbittorrent",
-            "htop"
+            "htop",
+            "gnome-shell-extension-tool"
 
 
         ],
-        _sudo=True
+
     )
 
     server.shell(commands=[
